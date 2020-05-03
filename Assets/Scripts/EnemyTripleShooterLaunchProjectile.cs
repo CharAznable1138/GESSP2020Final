@@ -26,8 +26,8 @@ public class EnemyTripleShooterLaunchProjectile : MonoBehaviour
             yield return new WaitForSeconds(waitTime);
             firingNoise.Play();
             Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), transform.rotation);
-            Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), bulletSpawnerLeft.transform.rotation);
-            Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), bulletSpawnerRight.transform.rotation);
+            Instantiate(bulletPrefab, new Vector3(bulletSpawnerLeft.transform.position.x, bulletSpawnerLeft.transform.position.y, bulletSpawnerLeft.transform.position.z), bulletSpawnerLeft.transform.rotation);
+            Instantiate(bulletPrefab, new Vector3(bulletSpawnerRight.transform.position.x, bulletSpawnerRight.transform.position.y, bulletSpawnerRight.transform.position.z), bulletSpawnerRight.transform.rotation);
         }
     }
 }
