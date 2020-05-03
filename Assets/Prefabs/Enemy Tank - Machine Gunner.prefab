@@ -848,4 +848,5 @@ MonoBehaviour:
     type: 3}
   minRepeatTime: 0.1
   maxRepeatTime: 0.2
-  startDelay: 1
+  burstDelay: 1
+  maxBulletsPerBurst: 5
