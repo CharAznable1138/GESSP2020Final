@@ -21,7 +21,7 @@ public class LaunchProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !coolDown)
+        if ((Input.GetKeyDown(KeyCode.Space) && !coolDown) || (Input.GetKeyDown(KeyCode.Mouse0) && !coolDown))
         {
             firingNoise.Play();
             Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(bulletPrefab.transform.rotation.x, transform.rotation.y, bulletPrefab.transform.rotation.z, bulletPrefab.transform.rotation.w));

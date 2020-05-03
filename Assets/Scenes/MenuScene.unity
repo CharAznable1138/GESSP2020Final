@@ -4043,15 +4043,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Move: Left and right arrow keys
-
-    OR
-
-    A and D keys
-
-    Rotate Turret: q and e Keys
-
-    Fire: Space Bar'
+  m_Text: "Move: Left and right arrow keys\nOR\nA and D keys\nAim Turret w/ mouse
+    cursor\nFire: Mouse 1 \nOR\nSpacebar"
 --- !u!222 &2023752992
 CanvasRenderer:
   m_ObjectHideFlags: 0
