@@ -7,7 +7,7 @@ public class PlayerBulletCollisionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreDisplay = GameObject.Find("ScoreDisplay");
+        scoreDisplay = GameObject.Find("Score Display");
         scoreManager = scoreDisplay.GetComponent<ScoreManager>();
     }
 

@@ -15,6 +15,6 @@ public class FinalScoreDisplay : MonoBehaviour
 
     internal void ShowFinalScore()
     {
-        finalScoreText.text = $"Confirmed Kills: {scoreManager.Score}";
+        finalScoreText.text = $"Enemies Remaining: {scoreManager.Score}";
     }
 }
