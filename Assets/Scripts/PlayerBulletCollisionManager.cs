@@ -15,7 +15,7 @@ public class PlayerBulletCollisionManager : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            scoreManager.Score++;
+            scoreManager.ChangeScore(-1);
         }
         if (collision.gameObject.CompareTag("EnemyProjectile"))
         {

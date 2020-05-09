@@ -3,18 +3,23 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    internal int Score = 0;
+    [SerializeField] int starterScore;
+    private int score;
     private Text scoreText;
 
     // Start is called before the first frame update
     void Start()
     {
+        score = starterScore;
         scoreText = GetComponent<Text>();
+        scoreText.text = $"Enemies\nRemaining: {score}";
     }
 
-    // Update is called once per frame
-    void Update()
+    internal void ChangeScore(int _arg)
     {
-        scoreText.text = $"Confirmed Kills: {Score}";
+        score += _arg;
+        scoreText.text = $"Enemies\nRemaining: {score}";
     }
+
+    internal int Score { get { return score; } }
 }
