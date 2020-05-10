@@ -17,6 +17,6 @@ public class FinalTimeDisplay : MonoBehaviour
 
     internal void ShowFinalTime()
     {
-        finalTimeText.text = $"Mission Time:\n{timeManager.TimePassedString}";
+        finalTimeText.text = $"Mission Time: {timeManager.TimePassedString}";
     }
 }
