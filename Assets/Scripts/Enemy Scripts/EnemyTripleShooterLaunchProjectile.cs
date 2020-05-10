@@ -10,17 +10,21 @@ public class EnemyTripleShooterLaunchProjectile : MonoBehaviour
     private AudioSource firingNoise;
     [SerializeField] GameObject bulletSpawnerLeft;
     [SerializeField] GameObject bulletSpawnerRight;
+    private GameObject player;
+    private PlayerCollisionManager playerCollisionManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerCollisionManager = player.GetComponentInChildren<PlayerCollisionManager>();
         firingNoise = GetComponent<AudioSource>();
         StartCoroutine("LaunchProjectile");
     }
 
     IEnumerator LaunchProjectile()
     {
-        while (true)
+        while (!playerCollisionManager.GameOver)
         {
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
             yield return new WaitForSeconds(waitTime);

@@ -10,17 +10,21 @@ public class EnemyMachineGunnerLaunchProjectile : MonoBehaviour
     private AudioSource firingNoise;
     [SerializeField] float burstDelay = 1.0f;
     [SerializeField] int maxBulletsPerBurst = 10;
+    private GameObject player;
+    private PlayerCollisionManager playerCollisionManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerCollisionManager = player.GetComponentInChildren<PlayerCollisionManager>();
         firingNoise = GetComponent<AudioSource>();
         StartCoroutine("LaunchProjectile");
     }
 
     IEnumerator LaunchProjectile()
     {
-        while (true)
+        while (!playerCollisionManager.GameOver)
         {
             yield return new WaitForSeconds(burstDelay);
             int bulletsLaunched = 0;
