@@ -21,7 +21,7 @@ public class PlayerCollisionManager : MonoBehaviour
     [SerializeField] GameObject deathSmoke;
     [SerializeField] GameObject explosion;
     private AudioSource hitSound;
-    internal bool gameOver;
+    private bool gameOver;
     private AudioSource lowHealthNoise;
     private AudioSource repairNoise;
     [SerializeField] GameObject damageSmoke;
@@ -42,6 +42,9 @@ public class PlayerCollisionManager : MonoBehaviour
     [SerializeField] float powerupTimer = 8;
     [SerializeField] GameObject tankParent;
     private AudioSource engineNoise;
+    [SerializeField] GameObject levelClearScreen;
+    [SerializeField] GameObject finalTimeDisplay;
+    private FinalTimeDisplay finalTimeDisplayer;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +58,7 @@ public class PlayerCollisionManager : MonoBehaviour
         Health = maxHealth;
         healthText.text = $"Structural Integrity: {Health}%";
         finalScoreDisplayer = finalScoreDisplay.GetComponent<FinalScoreDisplay>();
+        finalTimeDisplayer = finalTimeDisplay.GetComponent<FinalTimeDisplay>();
         hitSound = GetComponent<AudioSource>();
         gameOver = false;
         lowHealthNoise = healthDisplay.GetComponent<AudioSource>();
@@ -81,27 +85,8 @@ public class PlayerCollisionManager : MonoBehaviour
             healthText.text = $"Structural Integrity: {Health}%";
             if(gameOver == false && Health <= minHealth)
             {
-                gameOver = true;
-                Health = minHealth;
-                playerController.enabled = false;
-                Launcher.enabled = false;
-                rotateTurret.enabled = false;
-                fire.SetActive(false);
-                explosion.SetActive(true);
-                deathSmoke.SetActive(true);
-                StopAllCoroutines();
-                tankMaterial.mainTexture = greenTankTexture;
-                medkitSpawnerScript.StopAllCoroutines();
-                medkitSpawner.SetActive(false);
-                enemySpawnerScript.StopAllCoroutines();
-                enemySpawner.SetActive(false);
-                powerupSpawnerScript.StopAllCoroutines();
-                powerupSpawner.SetActive(false);
-                damageSmoke.SetActive(false);
-                engineNoise.enabled = false;
-                HUD.SetActive(false);
-                gameOverScreen.SetActive(true);
-                finalScoreDisplayer.Invoke("ShowFinalScore", 0);
+                StopEverything();
+                KillPlayer();
             }
         }
         if(collision.gameObject.CompareTag("Medkit"))
@@ -168,4 +153,41 @@ public class PlayerCollisionManager : MonoBehaviour
         tankMaterial.mainTexture = greenTankTexture;
         yield return null;
     }
+
+    internal void StopEverything()
+    {
+        gameOver = true;
+        playerController.enabled = false;
+        Launcher.enabled = false;
+        rotateTurret.enabled = false;
+        fire.SetActive(false);
+        StopAllCoroutines();
+        tankMaterial.mainTexture = greenTankTexture;
+        medkitSpawnerScript.StopAllCoroutines();
+        medkitSpawner.SetActive(false);
+        enemySpawnerScript.StopAllCoroutines();
+        enemySpawner.SetActive(false);
+        powerupSpawnerScript.StopAllCoroutines();
+        powerupSpawner.SetActive(false);
+        damageSmoke.SetActive(false);
+        engineNoise.enabled = false;
+        HUD.SetActive(false);
+    }
+
+    private void KillPlayer()
+    {
+        Health = minHealth;
+        explosion.SetActive(true);
+        deathSmoke.SetActive(true);
+        gameOverScreen.SetActive(true);
+        finalScoreDisplayer.Invoke("ShowFinalScore", 0);
+    }
+
+    internal void LevelClear()
+    {
+        levelClearScreen.SetActive(true);
+        finalTimeDisplayer.Invoke("ShowFinalTime", 0);
+    }
+
+    internal bool GameOver { get { return gameOver; } }
 }

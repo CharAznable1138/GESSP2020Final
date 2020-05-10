@@ -19,7 +19,7 @@ public class MedkitSpawnManager : MonoBehaviour
 
     IEnumerator SpawnMedkit()
     {
-        while (!playerCollisionManager.gameOver)
+        while (!playerCollisionManager.GameOver)
         {
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
             yield return new WaitForSeconds(waitTime);

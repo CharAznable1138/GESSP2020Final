@@ -15,7 +15,7 @@ public class GroundScroll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!playerCollisionManagerScript.gameOver)
+        if(!playerCollisionManagerScript.GameOver)
         {
             transform.Translate(Vector3.back * Time.deltaTime * speed);
         }

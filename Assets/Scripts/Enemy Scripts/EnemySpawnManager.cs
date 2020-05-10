@@ -25,7 +25,7 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyTop()
     {
-        while (!playerCollisionManager.gameOver)
+        while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
@@ -38,7 +38,7 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyLeft()
     {
-        while (!playerCollisionManager.gameOver)
+        while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
@@ -51,7 +51,7 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyRight()
     {
-        while (!playerCollisionManager.gameOver)
+        while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);

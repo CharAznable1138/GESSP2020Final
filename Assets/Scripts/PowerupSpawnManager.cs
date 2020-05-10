@@ -25,7 +25,7 @@ public class PowerupSpawnManager : MonoBehaviour
 
     IEnumerator SpawnPowerup()
     {
-        while (!playerCollisionManager.gameOver)
+        while (!playerCollisionManager.GameOver)
         {
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
             yield return new WaitForSeconds(waitTime);
