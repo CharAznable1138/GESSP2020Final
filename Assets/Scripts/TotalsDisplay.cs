@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Globalization;
+using System;
 
 public class TotalsDisplay : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class TotalsDisplay : MonoBehaviour
     private Text avgTimeText;
     [SerializeField] int levelsCount = 3;
     [SerializeField] int decimalPlaces = 2;
+    [SerializeField] GameObject accuracy;
+    private Text accuracyText;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +32,7 @@ public class TotalsDisplay : MonoBehaviour
         avgDamageText = avgDamage.GetComponent<Text>();
         avgTimeText = avgTime.GetComponent<Text>();
         totalTimeString = totalsTracker.TotalTime.ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture);
+        accuracyText = accuracy.GetComponent<Text>();
         ShowTotals();
     }
 
@@ -41,7 +45,19 @@ public class TotalsDisplay : MonoBehaviour
 
     private void CalculateAvgs()
     {
-        avgDamageText.text = (totalsTracker.TotalDamage/levelsCount).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture);
-        avgTimeText.text = (totalsTracker.TotalTime/levelsCount).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture);
+        avgDamageText.text = (totalsTracker.TotalDamage / levelsCount).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture);
+        avgTimeText.text = (totalsTracker.TotalTime / levelsCount).ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture);
+        CalculateAcc();
+    }
+
+    private void CalculateAcc()
+    {
+        decimal hitsRatio = (decimal)totalsTracker.ShotsHit / totalsTracker.ShotsTaken;
+        decimal hitsPercentage = Math.Round(hitsRatio * 100, decimalPlaces);
+        Debug.Log($"The current value of ShotsTaken is {totalsTracker.ShotsTaken}");
+        Debug.Log($"The current value of ShotsHit is {totalsTracker.ShotsHit}");
+        Debug.Log($"The current value of hitsRatio is {hitsRatio}");
+        Debug.Log($"The current value of hitsPercentage is {hitsPercentage}");
+        accuracyText.text = hitsPercentage.ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture) + "%";
     }
 }

@@ -11,6 +11,7 @@ public class PlayerBulletCollisionManager : MonoBehaviour
     {
         scoreDisplay = GameObject.Find("Score Display");
         scoreManager = scoreDisplay.GetComponent<ScoreManager>();
+        totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
         totalsTracker = totalsTrackerObject.GetComponent<TotalsTracker>();
     }
 
@@ -20,6 +21,7 @@ public class PlayerBulletCollisionManager : MonoBehaviour
         {
             scoreManager.ChangeScore(-1);
             totalsTracker.ShotsHit++;
+            Debug.Log($"The current value of ShotsHit is {totalsTracker.ShotsHit}");
         }
         if (collision.gameObject.CompareTag("EnemyProjectile"))
         {
