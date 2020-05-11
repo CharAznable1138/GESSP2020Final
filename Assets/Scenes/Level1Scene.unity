@@ -298,7 +298,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 382cda4fd75cc1043bb28f8256028de0, type: 2}
+  - {fileID: 2100000, guid: 2dabdf3127244b44bb070d2b81828f7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -860,7 +860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73956a3f8806f2744b2470b597a9bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterScore: 1
+  starterScore: 10
   player: {fileID: 1878283380}
 --- !u!1 &392762875
 GameObject:
@@ -4764,7 +4764,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 382cda4fd75cc1043bb28f8256028de0, type: 2}
+  - {fileID: 2100000, guid: 2dabdf3127244b44bb070d2b81828f7d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4838,8 +4838,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyPrefabs:
   - {fileID: 1860040994648527109, guid: d2a0dd9056c5fb443a82565abf1ad981, type: 3}
-  - {fileID: 7093483555197538570, guid: e2f4901b57b3c544e90c26666ccbac60, type: 3}
-  - {fileID: 5112684642874923782, guid: bf8ad06d240288a469e80e003c908e4d, type: 3}
+  - {fileID: 1860040994648527109, guid: d2a0dd9056c5fb443a82565abf1ad981, type: 3}
+  - {fileID: 1860040994648527109, guid: d2a0dd9056c5fb443a82565abf1ad981, type: 3}
   spawnRangeX: 20
   spawnPosZ: 20.3
   spawnPosX: 20.3

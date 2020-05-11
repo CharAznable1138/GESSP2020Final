@@ -812,7 +812,7 @@ RectTransform:
   m_Children:
   - {fileID: 94394614}
   m_Father: {fileID: 1078349592}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.425, y: 0.036690723}
   m_AnchorMax: {x: 0.57500005, y: 0.1138866}
@@ -1062,6 +1062,88 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 290890751}
+  m_CullTransparentMesh: 0
+--- !u!1 &398817972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 398817973}
+  - component: {fileID: 398817975}
+  - component: {fileID: 398817974}
+  m_Layer: 5
+  m_Name: Credits List Column 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &398817973
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398817972}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1078349592}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.29146388}
+  m_AnchorMax: {x: 0.99200004, y: 0.845}
+  m_AnchoredPosition: {x: 1.8999939, y: 0.94999695}
+  m_SizeDelta: {x: -3.7999878, y: -0.10000038}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &398817974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398817972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0.02745098, b: 0.3882353, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 78077158409c655439cb1736740e627e, type: 3}
+    m_FontSize: 13
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Powerup Music:\nStrength Of The Titans by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/5744-strength-of-the-titans\r\nLicense:
+    http://creativecommons.org/licenses/by/4.0/\n\nLevel Clear Music:\nTake a Chance
+    by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/4457-take-a-chance\r\nLicense:
+    http://creativecommons.org/licenses/by/4.0/\n\nFinal Results Music:\nCrusade Heavy
+    Industry by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/4678-crusade-heavy-industry\r\nLicense:
+    http://creativecommons.org/licenses/by/4.0/"
+--- !u!222 &398817975
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 398817972}
   m_CullTransparentMesh: 0
 --- !u!1 &431643596
 GameObject:
@@ -1410,7 +1492,7 @@ GameObject:
   - component: {fileID: 537924389}
   - component: {fileID: 537924388}
   m_Layer: 5
-  m_Name: Credits List
+  m_Name: Credits List Column 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,9 +1513,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.014, y: 0.29146388}
-  m_AnchorMax: {x: 0.99200004, y: 0.845}
-  m_AnchoredPosition: {x: 0.8999634, y: 0.8089981}
-  m_SizeDelta: {x: 0.19995022, y: -0.12000275}
+  m_AnchorMax: {x: 0.5, y: 0.845}
+  m_AnchoredPosition: {x: 2.0599976, y: 0.8089981}
+  m_SizeDelta: {x: 2.5200195, y: -0.099999905}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &537924388
 MonoBehaviour:
@@ -1470,10 +1552,6 @@ MonoBehaviour:
     http://creativecommons.org/licenses/by/4.0/\n\nLevel Music:\nHitman by Kevin MacLeod\r\nLink:
     https://incompetech.filmmusic.io/song/3880-hitman\r\nLicense: http://creativecommons.org/licenses/by/4.0/\n\nGame
     Over Music:\nVirtutes Instrumenti by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/4590-virtutes-instrumenti\r\nLicense:
-    http://creativecommons.org/licenses/by/4.0/\n\nPowerup Music:\nStrength Of The
-    Titans by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/5744-strength-of-the-titans\r\nLicense:
-    http://creativecommons.org/licenses/by/4.0/\n\nLevel Clear Music:\nTake a Chance
-    by Kevin MacLeod\r\nLink: https://incompetech.filmmusic.io/song/4457-take-a-chance\r\nLicense:
     http://creativecommons.org/licenses/by/4.0/"
 --- !u!222 &537924389
 CanvasRenderer:
@@ -1515,7 +1593,7 @@ RectTransform:
   m_Children:
   - {fileID: 1694442644}
   m_Father: {fileID: 1078349592}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.425, y: 0.12942268}
   m_AnchorMax: {x: 0.57500005, y: 0.20400001}
@@ -2093,6 +2171,10 @@ MonoBehaviour:
     Desert terrain texture by Casual2D (Website: http://casual2d.com/, Contact: casual2d@protonmail.com)
 
 
+    Other terrain textures by Aleksey (ArtStation: https://aleksey8310.artstation.com/,
+    Contact: papa8308.3ds@gmail.com)
+
+
     Projectile & PowerUp Models by AurynSky (Website: http://www.aurynsky.com, Contact:
     Aurynskygames@gmail.com)
 
@@ -2534,6 +2616,7 @@ RectTransform:
   m_Children:
   - {fileID: 281476767}
   - {fileID: 537924387}
+  - {fileID: 398817973}
   - {fileID: 1347455765}
   - {fileID: 598249505}
   - {fileID: 205254791}
@@ -2987,7 +3070,7 @@ RectTransform:
   m_Children:
   - {fileID: 1220609776}
   m_Father: {fileID: 1078349592}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.425, y: 0.21684538}
   m_AnchorMax: {x: 0.57500005, y: 0.29146388}
