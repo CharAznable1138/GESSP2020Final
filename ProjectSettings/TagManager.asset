@@ -13,6 +13,7 @@ TagManager:
   - PlayerChassis
   - PlayerTurret
   - Powerup
+  - TotalsTracker
   layers:
   - Default
   - TransparentFX

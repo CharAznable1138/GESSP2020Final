@@ -27,4 +27,6 @@ public class TimeManager : MonoBehaviour
     }
 
     internal string TimePassedString { get { return timePassedString; } }
+
+    internal double TimePassed { get { return timePassed; } }
 }

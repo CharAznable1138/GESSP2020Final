@@ -45,6 +45,8 @@ public class PlayerCollisionManager : MonoBehaviour
     [SerializeField] GameObject levelClearScreen;
     [SerializeField] GameObject finalTimeDisplay;
     private FinalTimeDisplay finalTimeDisplayer;
+    private GameObject totalsTrackerObject;
+    private TotalsTracker totalsTracker;
 
     // Start is called before the first frame update
     void Start()
@@ -66,6 +68,8 @@ public class PlayerCollisionManager : MonoBehaviour
         powerupSpawnerScript = powerupSpawner.GetComponent<PowerupSpawnManager>();
         tankMaterial.mainTexture = greenTankTexture;
         engineNoise = tankParent.GetComponent<AudioSource>();
+        totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
+        totalsTracker = totalsTrackerObject.GetComponent<TotalsTracker>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,9 +77,10 @@ public class PlayerCollisionManager : MonoBehaviour
         if(collision.gameObject.CompareTag("EnemyProjectile"))
         {
             Destroy(collision.gameObject);
-            if (Health > minHealth)
+            if (!gameOver && Health > minHealth)
             {
                 Health -= healthDecrementer;
+                totalsTracker.TotalDamage += healthDecrementer;
                 hitSound.Play();
             }
             else
@@ -83,7 +88,7 @@ public class PlayerCollisionManager : MonoBehaviour
                 Health = minHealth;
             }
             healthText.text = $"Structural Integrity: {Health}%";
-            if(gameOver == false && Health <= minHealth)
+            if(!gameOver && Health <= minHealth)
             {
                 StopEverything();
                 KillPlayer();
