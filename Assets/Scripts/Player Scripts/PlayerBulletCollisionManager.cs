@@ -21,7 +21,6 @@ public class PlayerBulletCollisionManager : MonoBehaviour
         {
             scoreManager.ChangeScore(-1);
             totalsTracker.ShotsHit++;
-            Debug.Log($"The current value of ShotsHit is {totalsTracker.ShotsHit}");
         }
         if (collision.gameObject.CompareTag("EnemyProjectile"))
         {

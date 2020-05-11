@@ -31,7 +31,6 @@ public class LaunchProjectile : MonoBehaviour
             Instantiate(bulletPrefab, new Vector3(transform.position.x, transform.position.y, transform.position.z), new Quaternion(bulletPrefab.transform.rotation.x, transform.rotation.y, bulletPrefab.transform.rotation.z, bulletPrefab.transform.rotation.w));
             StartCoroutine("Cooldown");
             totalsTracker.ShotsTaken++;
-            Debug.Log($"The current value of ShotsTaken is {totalsTracker.ShotsTaken}");
         }
     }
 

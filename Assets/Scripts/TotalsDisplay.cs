@@ -54,10 +54,6 @@ public class TotalsDisplay : MonoBehaviour
     {
         decimal hitsRatio = (decimal)totalsTracker.ShotsHit / totalsTracker.ShotsTaken;
         decimal hitsPercentage = Math.Round(hitsRatio * 100, decimalPlaces);
-        Debug.Log($"The current value of ShotsTaken is {totalsTracker.ShotsTaken}");
-        Debug.Log($"The current value of ShotsHit is {totalsTracker.ShotsHit}");
-        Debug.Log($"The current value of hitsRatio is {hitsRatio}");
-        Debug.Log($"The current value of hitsPercentage is {hitsPercentage}");
         accuracyText.text = hitsPercentage.ToString($"F{decimalPlaces}", CultureInfo.InvariantCulture) + "%";
     }
 }
