@@ -17,7 +17,7 @@ public class PlayerBulletCollisionManager : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("EnemySpecial"))
         {
             scoreManager.ChangeScore(-1);
             totalsTracker.ShotsHit++;

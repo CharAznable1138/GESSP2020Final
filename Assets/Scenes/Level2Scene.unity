@@ -372,7 +372,7 @@ PrefabInstance:
     - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
         type: 3}
@@ -2329,7 +2329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1.0000002, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &839493354
 MonoBehaviour:
@@ -4226,7 +4226,7 @@ Transform:
   - {fileID: 1068613583}
   - {fileID: 2055904080}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1878247510
 Transform:
@@ -4917,6 +4917,7 @@ MonoBehaviour:
   minRepeatTime: 1
   maxRepeatTime: 10
   player: {fileID: 1878283380}
+  maxSpecialEnemies: 2
 --- !u!4 &1958866614
 Transform:
   m_ObjectHideFlags: 0

@@ -745,7 +745,7 @@ GameObject:
   - component: {fileID: 4741206795622897225}
   m_Layer: 0
   m_Name: Enemy Tank - Triple Shooter
-  m_TagString: Enemy
+  m_TagString: EnemySpecial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

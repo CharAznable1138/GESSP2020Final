@@ -14,6 +14,7 @@ TagManager:
   - PlayerTurret
   - Powerup
   - TotalsTracker
+  - EnemySpecial
   layers:
   - Default
   - TransparentFX

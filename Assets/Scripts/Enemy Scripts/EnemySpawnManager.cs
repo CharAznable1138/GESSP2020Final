@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using Boo.Lang;
+using System.Collections;
+using System.Linq;
 using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
@@ -14,6 +16,7 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField] GameObject player;
     private PlayerCollisionManager playerCollisionManager;
     private int enemyPrefabIndex;
+    [SerializeField] int maxSpecialEnemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,21 @@ public class EnemySpawnManager : MonoBehaviour
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);
             yield return new WaitForSeconds(waitTime);
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
-            Instantiate(enemyPrefabs[enemyPrefabIndex], spawnPos, enemyPrefabs[enemyPrefabIndex].transform.rotation);
+            if (enemyPrefabs[enemyPrefabIndex].gameObject.CompareTag("EnemySpecial"))
+            {
+                if(GameObject.FindGameObjectsWithTag("EnemySpecial").Length < maxSpecialEnemies)
+                {
+                    Instantiate(enemyPrefabs[enemyPrefabIndex], spawnPos, enemyPrefabs[enemyPrefabIndex].transform.rotation);
+                }
+                else
+                {
+                    Debug.Log("Tried to spawn in a special enemy, failed because there were too many special enemies on screen already.");
+                }
+            }
+            else
+            {
+                Instantiate(enemyPrefabs[enemyPrefabIndex], spawnPos, enemyPrefabs[enemyPrefabIndex].transform.rotation);
+            }
         }
         yield return null;
     }

@@ -4917,6 +4917,7 @@ MonoBehaviour:
   minRepeatTime: 1
   maxRepeatTime: 10
   player: {fileID: 1878283380}
+  maxSpecialEnemies: 3
 --- !u!4 &1958866614
 Transform:
   m_ObjectHideFlags: 0
