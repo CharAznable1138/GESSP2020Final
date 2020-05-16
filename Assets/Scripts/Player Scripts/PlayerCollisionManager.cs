@@ -36,9 +36,8 @@ public class PlayerCollisionManager : MonoBehaviour
     [SerializeField] Color32 loHealthColor = new Color32(255, 10, 0, 255);
     [SerializeField] GameObject powerupSpawner;
     private PowerupSpawnManager powerupSpawnerScript;
-    [SerializeField] Material tankMaterial;
-    [SerializeField] Texture greenTankTexture;
-    [SerializeField] Texture yellowTankTexture;
+    [SerializeField] Material greenTankMaterial;
+    [SerializeField] Material yellowTankMaterial;
     [SerializeField] float powerupTimer = 8;
     [SerializeField] GameObject tankParent;
     private AudioSource engineNoise;
@@ -47,6 +46,9 @@ public class PlayerCollisionManager : MonoBehaviour
     private FinalTimeDisplay finalTimeDisplayer;
     private GameObject totalsTrackerObject;
     private TotalsTracker totalsTracker;
+    private MeshRenderer meshRenderer;
+    [SerializeField] GameObject turret;
+    private MeshRenderer turretMeshRenderer;
 
     // Start is called before the first frame update
     void Start()
@@ -66,10 +68,12 @@ public class PlayerCollisionManager : MonoBehaviour
         lowHealthNoise = healthDisplay.GetComponent<AudioSource>();
         repairNoise = medkitSpawner.GetComponent<AudioSource>();
         powerupSpawnerScript = powerupSpawner.GetComponent<PowerupSpawnManager>();
-        tankMaterial.mainTexture = greenTankTexture;
         engineNoise = tankParent.GetComponent<AudioSource>();
         totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
         totalsTracker = totalsTrackerObject.GetComponent<TotalsTracker>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        turretMeshRenderer = turret.GetComponent<MeshRenderer>();
+        MakeTankGreen();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -153,9 +157,9 @@ public class PlayerCollisionManager : MonoBehaviour
 
     IEnumerator Powerup()
     {
-        tankMaterial.mainTexture = yellowTankTexture;
+        MakeTankYellow();
         yield return new WaitForSeconds(powerupTimer);
-        tankMaterial.mainTexture = greenTankTexture;
+        MakeTankGreen();
         yield return null;
     }
 
@@ -167,7 +171,7 @@ public class PlayerCollisionManager : MonoBehaviour
         rotateTurret.enabled = false;
         fire.SetActive(false);
         StopAllCoroutines();
-        tankMaterial.mainTexture = greenTankTexture;
+        MakeTankGreen();
         medkitSpawnerScript.StopAllCoroutines();
         medkitSpawner.SetActive(false);
         enemySpawnerScript.StopAllCoroutines();
@@ -195,4 +199,15 @@ public class PlayerCollisionManager : MonoBehaviour
     }
 
     internal bool GameOver { get { return gameOver; } }
+
+    private void MakeTankGreen()
+    {
+        meshRenderer.material = greenTankMaterial;
+        turretMeshRenderer.material = greenTankMaterial;
+    }
+    private void MakeTankYellow()
+    {
+        meshRenderer.material = yellowTankMaterial;
+        turretMeshRenderer.material = yellowTankMaterial;
+    }
 }
