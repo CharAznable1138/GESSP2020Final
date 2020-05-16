@@ -1720,13 +1720,13 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4278192895
   powerupSpawner: {fileID: 444730001}
-  tankMaterial: {fileID: 2100000, guid: 2a92b9acf19195d4b87b5df0b8059d21, type: 2}
-  greenTankTexture: {fileID: 2800000, guid: 81c53006b40b24a4a9fd168e2b1f4e56, type: 3}
-  yellowTankTexture: {fileID: 2800000, guid: 423e249005050b94fa0278c8e05ab7f5, type: 3}
+  greenTankMaterial: {fileID: 2100000, guid: 2a92b9acf19195d4b87b5df0b8059d21, type: 2}
+  yellowTankMaterial: {fileID: 2100000, guid: ec6719e5db4376f4c9f8b7f656ba57be, type: 2}
   powerupTimer: 15
   tankParent: {fileID: 1878283380}
   levelClearScreen: {fileID: 268424719}
   finalTimeDisplay: {fileID: 1136228050}
+  turret: {fileID: 1878283382}
 --- !u!54 &581379645
 Rigidbody:
   m_ObjectHideFlags: 0

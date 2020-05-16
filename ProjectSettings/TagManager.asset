@@ -15,6 +15,7 @@ TagManager:
   - Powerup
   - TotalsTracker
   - EnemySpecial
+  - EnemyTutorial
   layers:
   - Default
   - TransparentFX
