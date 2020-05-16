@@ -9,4 +9,5 @@ public class MoveForward : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
     }
+    internal float Speed { get { return speed; } set { speed = value; } }
 }
