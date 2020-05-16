@@ -253,7 +253,7 @@ GameObject:
   - component: {fileID: 8207390470575243841}
   m_Layer: 0
   m_Name: Enemy Tank - Tutorial
-  m_TagString: Enemy
+  m_TagString: EnemyTutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,9 +422,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8207390470575243842}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29948cd091141bb44b6f379d5ccce693, type: 3}
+  m_Script: {fileID: 11500000, guid: f63e9ab3cc7575d48ad189a84c97e3ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 2293984145132858315, guid: 93a92958ba44c5140a8d5719abbb224c,
+    type: 3}
   chassis: {fileID: 8207390470575243844}
 --- !u!1 &8207390470575243844
 GameObject:
@@ -442,7 +444,7 @@ GameObject:
   - component: {fileID: 8207390470575243843}
   m_Layer: 0
   m_Name: Mini War Tank
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
