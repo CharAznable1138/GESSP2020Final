@@ -10,15 +10,22 @@ public class MedkitSpawnManager : MonoBehaviour
     [SerializeField] float maxRepeatTime = 20;
     [SerializeField] GameObject player;
     private PlayerCollisionManager playerCollisionManager;
+    [SerializeField] GameObject dialogueManagerObject;
+    private DialogueManager dialogueManager;
     // Start is called before the first frame update
     void Start()
     {
         playerCollisionManager = player.GetComponentInChildren<PlayerCollisionManager>();
+        dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
         StartCoroutine("SpawnMedkit");
     }
 
     IEnumerator SpawnMedkit()
     {
+        while (!dialogueManager.IsDialogueOver)
+        {
+            yield return null;
+        }
         while (!playerCollisionManager.GameOver)
         {
             float waitTime = Random.Range(minRepeatTime, maxRepeatTime);

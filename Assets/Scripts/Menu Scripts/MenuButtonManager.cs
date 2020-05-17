@@ -7,7 +7,6 @@ public class MenuButtonManager : MonoBehaviour
     [SerializeField] GameObject credits;
     [SerializeField] GameObject creditsTwo;
     [SerializeField] GameObject creditsThree;
-    [SerializeField] GameObject instructions;
     public void StartGame() => SceneManager.LoadScene(1);
 
     public void QuitGame()
@@ -24,7 +23,6 @@ public class MenuButtonManager : MonoBehaviour
         credits.SetActive(false);
         creditsTwo.SetActive(false);
         creditsThree.SetActive(false);
-        instructions.SetActive(false);
         mainMenu.SetActive(true);
     }
 
@@ -32,12 +30,6 @@ public class MenuButtonManager : MonoBehaviour
     {
         mainMenu.SetActive(false);
         credits.SetActive(true);
-    }
-
-    public void Instructions()
-    {
-        mainMenu.SetActive(false);
-        instructions.SetActive(true);
     }
 
     public void Credits1()

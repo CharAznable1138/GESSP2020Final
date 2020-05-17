@@ -34,8 +34,6 @@ public class PlayerCollisionManager : MonoBehaviour
     [SerializeField] Color32 hiHealthColor = new Color32(0, 255, 52, 255);
     [SerializeField] Color32 medHealthColor = new Color32(255, 227, 0, 255);
     [SerializeField] Color32 loHealthColor = new Color32(255, 10, 0, 255);
-    [SerializeField] GameObject powerupSpawner;
-    private PowerupSpawnManager powerupSpawnerScript;
     [SerializeField] Material greenTankMaterial;
     [SerializeField] Material yellowTankMaterial;
     [SerializeField] float powerupTimer = 8;
@@ -49,6 +47,8 @@ public class PlayerCollisionManager : MonoBehaviour
     private MeshRenderer meshRenderer;
     [SerializeField] GameObject turret;
     private MeshRenderer turretMeshRenderer;
+    [SerializeField] GameObject musicManagerObject;
+    private MusicManager musicManager;
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +67,13 @@ public class PlayerCollisionManager : MonoBehaviour
         gameOver = false;
         lowHealthNoise = healthDisplay.GetComponent<AudioSource>();
         repairNoise = medkitSpawner.GetComponent<AudioSource>();
-        powerupSpawnerScript = powerupSpawner.GetComponent<PowerupSpawnManager>();
         engineNoise = tankParent.GetComponent<AudioSource>();
         totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
         totalsTracker = totalsTrackerObject.GetComponent<TotalsTracker>();
         meshRenderer = GetComponent<MeshRenderer>();
         turretMeshRenderer = turret.GetComponent<MeshRenderer>();
         MakeTankGreen();
+        musicManager = musicManagerObject.GetComponent<MusicManager>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -124,7 +124,6 @@ public class PlayerCollisionManager : MonoBehaviour
                 StartCoroutine("Powerup");
                 playerController.StartCoroutine("Powerup");
                 Launcher.StartCoroutine("Powerup");
-                powerupSpawnerScript.StartCoroutine("PowerupMusic");
             }
             else
             {
@@ -158,8 +157,10 @@ public class PlayerCollisionManager : MonoBehaviour
     IEnumerator Powerup()
     {
         MakeTankYellow();
+        musicManager.SetPowerupMusic();
         yield return new WaitForSeconds(powerupTimer);
         MakeTankGreen();
+        musicManager.SetLevelMusic();
         yield return null;
     }
 
@@ -176,11 +177,10 @@ public class PlayerCollisionManager : MonoBehaviour
         medkitSpawner.SetActive(false);
         enemySpawnerScript.StopAllCoroutines();
         enemySpawner.SetActive(false);
-        powerupSpawnerScript.StopAllCoroutines();
-        powerupSpawner.SetActive(false);
         damageSmoke.SetActive(false);
         engineNoise.enabled = false;
         HUD.SetActive(false);
+        musicManager.StopMusic();
     }
 
     private void KillPlayer()

@@ -17,10 +17,13 @@ public class EnemySpawnManager : MonoBehaviour
     private PlayerCollisionManager playerCollisionManager;
     private int enemyPrefabIndex;
     [SerializeField] int maxSpecialEnemies;
+    [SerializeField] GameObject dialogueManagerObject;
+    private DialogueManager dialogueManager;
     // Start is called before the first frame update
     void Start()
     {
         playerCollisionManager = player.GetComponentInChildren<PlayerCollisionManager>();
+        dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
         StartCoroutine("SpawnEnemyTop");
         StartCoroutine("SpawnEnemyLeft");
         StartCoroutine("SpawnEnemyRight");
@@ -28,6 +31,10 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyTop()
     {
+        while(!dialogueManager.IsDialogueOver)
+        {
+            yield return null;
+        }
         while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
@@ -36,7 +43,7 @@ public class EnemySpawnManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
             if (enemyPrefabs[enemyPrefabIndex].gameObject.CompareTag("EnemySpecial"))
             {
-                if(GameObject.FindGameObjectsWithTag("EnemySpecial").Length < maxSpecialEnemies)
+                if(GameObject.FindGameObjectsWithTag("EnemySpecial").Length <= maxSpecialEnemies)
                 {
                     Instantiate(enemyPrefabs[enemyPrefabIndex], spawnPos, enemyPrefabs[enemyPrefabIndex].transform.rotation);
                 }
@@ -55,6 +62,10 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyLeft()
     {
+        while (!dialogueManager.IsDialogueOver)
+        {
+            yield return null;
+        }
         while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
@@ -68,6 +79,10 @@ public class EnemySpawnManager : MonoBehaviour
 
     IEnumerator SpawnEnemyRight()
     {
+        while (!dialogueManager.IsDialogueOver)
+        {
+            yield return null;
+        }
         while (!playerCollisionManager.GameOver)
         {
             enemyPrefabIndex = Random.Range(0, enemyPrefabs.Length);
