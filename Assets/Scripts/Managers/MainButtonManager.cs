@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 public class MainButtonManager : MonoBehaviour
 {
     private int currentSceneIndex;
+    private GameObject totalsTrackerObject;
     private void Start()
     {
         currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
     }
     public void QuitGame() => SceneManager.LoadScene(0);
 
     public void Retry() => SceneManager.LoadScene(currentSceneIndex);
 
-    public void NextLevel() => SceneManager.LoadScene(currentSceneIndex + 1);
+    public void NextLevel()
+    {
+        if(currentSceneIndex == 1)
+        {
+            Destroy(totalsTrackerObject);
+        }
+        SceneManager.LoadScene(currentSceneIndex + 1);
+    }
 }

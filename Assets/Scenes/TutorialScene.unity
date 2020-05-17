@@ -1969,6 +1969,7 @@ MonoBehaviour:
       enemy won't be using rubber shells, so take this seriously.
     - Good luck, soldier! General Nemo over and out!
   startDialogueDelay: 0.5
+  dialogueDisplay: {fileID: 780875986}
 --- !u!4 &546415379
 Transform:
   m_ObjectHideFlags: 0
@@ -2809,7 +2810,7 @@ Transform:
   - {fileID: 1967908888}
   - {fileID: 617249087}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &778247713
 GameObject:
@@ -3054,7 +3055,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &924119916
 GameObject:
@@ -3713,6 +3714,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1062306828}
   m_CullTransparentMesh: 0
+--- !u!1001 &1136309408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2172161735691262530, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3402301243177144566, guid: b5274b7eed1a42f4aaac2d273f516dc6,
+        type: 3}
+      propertyPath: m_Name
+      value: Totals Tracker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b5274b7eed1a42f4aaac2d273f516dc6, type: 3}
 --- !u!1 &1148601594
 GameObject:
   m_ObjectHideFlags: 0
@@ -4307,7 +4377,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &1468414897
 GameObject:
@@ -5341,46 +5411,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070052204}
   m_Mesh: {fileID: 4300000, guid: 0912dbc085d711441a65f5b93b128918, type: 3}
---- !u!114 &2216516061305156661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455349753554795767}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e197ed3a233599247ba0d88593855dff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &2225245682237617731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3455349753554795767}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3455349753554795767
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2225245682237617731}
-  - component: {fileID: 2216516061305156661}
-  m_Layer: 0
-  m_Name: Totals Tracker
-  m_TagString: TotalsTracker
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
