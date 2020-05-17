@@ -9,12 +9,9 @@ public class DialogueTrigger : MonoBehaviour
     private DialogueManager dialogueManager;
     [SerializeField] Dialogue dialogue;
     [SerializeField] float startDialogueDelay = 0.5f;
-    [SerializeField] GameObject dialogueDisplay;
-    private Text dialogueDisplayText;
     private void Start()
     {
         dialogueManager = dialogueManagerObject.GetComponent<DialogueManager>();
-        dialogueDisplayText = dialogueDisplay.GetComponent<Text>();
         StartCoroutine(StartDialogueAfterDelay());
     }
     internal void TriggerDialogue()
@@ -26,7 +23,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Mouse1))
         {
-            dialogueDisplayText.text = null;
             dialogueManager.DisplayNextSentence();
         }
     }

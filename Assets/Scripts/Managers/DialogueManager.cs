@@ -42,12 +42,13 @@ public class DialogueManager : MonoBehaviour
             return;
         }
         string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        dialogueDisplayText.text = null;
         StartCoroutine(TypeSentence(sentence));
     }
 
     IEnumerator TypeSentence(string _sentence)
     {
-        dialogueDisplayText.text = null;
         foreach(char letter in _sentence.ToCharArray())
         {
             dialogueDisplayText.text += letter;
