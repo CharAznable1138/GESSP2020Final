@@ -14,7 +14,6 @@ public class EnemyCollisionManager : MonoBehaviour
     private ScoreManager scoreManager;
     private GameObject totalsTrackerObject;
     private TotalsTracker totalsTracker;
-    private ScoreManagerTutorial scoreManagerTutorial;
     private void Start()
     {
         moveForward = GetComponent<MoveForward>();
@@ -25,7 +24,6 @@ public class EnemyCollisionManager : MonoBehaviour
         isAlreadyHit = false;
         scoreDisplay = GameObject.Find("Score Display");
         scoreManager = scoreDisplay.GetComponent<ScoreManager>();
-        scoreManagerTutorial = scoreDisplay.GetComponent<ScoreManagerTutorial>();
         totalsTrackerObject = GameObject.FindGameObjectWithTag("TotalsTracker");
         totalsTracker = totalsTrackerObject.GetComponent<TotalsTracker>();
     }
@@ -52,7 +50,7 @@ public class EnemyCollisionManager : MonoBehaviour
                 boxCollider.enabled = false;
                 if(!isAlreadyHit)
                 {
-                    scoreManagerTutorial.ChangeScore(-1);
+                    scoreManager.ChangeScore(-1);
                     totalsTracker.ShotsHit++;
                     isAlreadyHit = true;
                 }

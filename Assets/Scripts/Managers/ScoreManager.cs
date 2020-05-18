@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
@@ -8,21 +9,39 @@ public class ScoreManager : MonoBehaviour
     private Text scoreText;
     [SerializeField] GameObject player;
     private PlayerCollisionManager playerCollisionManager;
+    private int currentSceneIndex;
 
     // Start is called before the first frame update
     void Start()
     {
         score = starterScore;
         scoreText = GetComponent<Text>();
-        scoreText.text = $"Enemies\nRemaining: {score}";
+        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        switch (currentSceneIndex)
+        {
+            case (1):
+                scoreText.text = $"\"Enemies\"\nRemaining: {score}";
+                break;
+            default:
+                scoreText.text = $"Enemies\nRemaining: {score}";
+                break;
+        }
         playerCollisionManager = player.GetComponentInChildren<PlayerCollisionManager>();
     }
 
     internal void ChangeScore(int _arg)
     {
         score += _arg;
-        scoreText.text = $"Enemies\nRemaining: {score}";
-        if(score <= 0)
+        switch (currentSceneIndex)
+        {
+            case (1):
+                scoreText.text = $"\"Enemies\"\nRemaining: {score}";
+                break;
+            default:
+                scoreText.text = $"Enemies\nRemaining: {score}";
+                break;
+        }
+        if (score <= 0)
         {
             playerCollisionManager.StopEverything();
             playerCollisionManager.LevelClear();
