@@ -396,8 +396,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1804944054732130628, guid: f4c2ca66434833c4ab28017a9fefa380,
     type: 3}
-  minRepeatTime: 0.5
-  maxRepeatTime: 1.5
+  minRepeatTime: 1
+  maxRepeatTime: 2
   bulletSpawnerLeft: {fileID: 2863287979561817621}
   bulletSpawnerRight: {fileID: 2863287979451018400}
 --- !u!1 &7093483555197538560
