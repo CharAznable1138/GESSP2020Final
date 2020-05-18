@@ -48,7 +48,7 @@ public class EnemySpawnManager : MonoBehaviour
                 }
                 else
                 {
-                    Debug.Log("Tried to spawn in a special enemy, failed because there were too many special enemies on screen already.");
+                    yield return null;
                 }
             }
             else
