@@ -182,6 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f69b1604d2ce664b8815d0821244dcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletCollisionNoise: {fileID: 5368490840072754075, guid: 5e84d5a98b5319041a5322a4467dd1a3,
+    type: 3}
 --- !u!114 &5847103310783933183
 MonoBehaviour:
   m_ObjectHideFlags: 0
