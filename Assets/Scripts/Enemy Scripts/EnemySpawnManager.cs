@@ -42,7 +42,7 @@ public class EnemySpawnManager : MonoBehaviour
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
             if (enemyPrefabs[enemyPrefabIndex].gameObject.CompareTag("EnemySpecial"))
             {
-                if(GameObject.FindGameObjectsWithTag("EnemySpecial").Length <= maxSpecialEnemies)
+                if(GameObject.FindGameObjectsWithTag("EnemySpecial").Length < maxSpecialEnemies)
                 {
                     Instantiate(enemyPrefabs[enemyPrefabIndex], spawnPos, enemyPrefabs[enemyPrefabIndex].transform.rotation);
                 }
