@@ -3262,7 +3262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c24be274315fdf428236eb30f76c590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeDisplay: {fileID: 0}
+  timeDisplay: {fileID: 2069917391}
 --- !u!114 &1136228053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,7 +3538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f20457ebf74ed45b6c7c22afc317f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 679654560}
 --- !u!1 &1290864651 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 158588, guid: 3407201495b56b440be4e16677cf2316,
