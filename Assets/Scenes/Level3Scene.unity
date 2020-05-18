@@ -2031,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73956a3f8806f2744b2470b597a9bf10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  starterScore: 10
+  starterScore: 30
   player: {fileID: 1878283380}
 --- !u!114 &679654563
 MonoBehaviour:
